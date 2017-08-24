@@ -76,13 +76,13 @@ def main():
     log.info("detected wacom devices: %s", wacom)
 
     # load stylus touchpad trackpoint devices
-    #lines = subprocess.check_output(['xinput','--list', '--name-only']).decode().split('\n')
+    lines = subprocess.check_output(['xinput','--list', '--name-only']).decode().split('\n')
 
-    #stylus = next(x for x in lines if "stylus" in x)
-    #log.info("found stylus %s", stylus)
+    stylus = next(x for x in lines if "stylus" in x)
+    log.info("found stylus %s", stylus)
 
-    #finger_touch = next(x for x in lines if "Finger touch" in x)
-    #log.info("found finger touch %s", finger_touch)
+    finger_touch = next(x for x in lines if "Finger touch" in x)
+    log.info("found finger touch %s", finger_touch)
 
     atexit.register(cleanup, wacom)
 
