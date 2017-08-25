@@ -12,10 +12,9 @@ c2=$(echo $res_y/$TOTAL_HEIGHT | bc -l)
 c1=$(echo $offset_x/$TOTAL_WIDTH | bc -l)
 c3=$(echo $offset_y/$TOTAL_HEIGHT | bc -l)
 
-#default_IFS=$IFS
-#IFS="$(echo -e "\n\r")"
-#for device in $(xinput --list --name-only | grep Wacom); do            #NO IDEA WHY THIS DOESN'T WORK
-for device in 9  10  17; do
-     xinput set-prop $device --type=float "Coordinate Transformation Matrix" $c0 0 $c1 0 $c2 $c3 0 0 1
+default_IFS=$IFS
+IFS="$(echo -e "\n\r")"
+for device in $(xinput --list --name-only | grep Wacom); do
+     xinput set-prop "$device" --type=float "Coordinate Transformation Matrix" $c0 0 $c1 0 $c2 $c3 0 0 1
 done
-#IFS=$default_IFS
+IFS=$default_IFS
