@@ -46,10 +46,7 @@ def sensor_proxy_signal_handler(source, changedProperties, invalidatedProperties
             subprocess.call(["xrandr", "--output", "eDP1", "--rotate", xrandr_orientation_map[orientation]])
             for device in wacom:
                 cmd_and_log(["xsetwacom", "--set", device, "rotate", wacom_orientation_map[orientation]])
-            if orientation in ['bottom-up', 'normal']:
-                subprocess.call(['multi_monitor_touch_fix.sh', 'h'])
-            else:
-                subprocess.call(['multi_monitor_touch_fix.sh', 'v'])
+                subprocess.call(['/home/john/scripts/x1_yoga_scripts/multi_monitor_touch_fix.sh'])
 
 
 #def cleanup(touch_and_track, wacom):
