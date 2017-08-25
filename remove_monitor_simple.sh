@@ -2,4 +2,4 @@
 #currently only HDMI
 
 xrandr --output HDMI1 --off
-multi_monitor_touch_fix.sh h
+multi_monitor_touch_fix.sh
