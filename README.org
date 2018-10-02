@@ -1,6 +1,6 @@
 * Description
   Scripts for making good use of the x1 yoga hardware.
 * Features
-** Automatic rotation of screen and wacom devices
-** Automatic disabling of touchpad and track point in tablet mode
-** Proper scaling of touch service when used with multiple monitors
+- Automatic rotation of screen and wacom devices
+- Automatic disabling of touchpad and track point in tablet mode
+- Proper scaling of touch service when used with multiple monitors
