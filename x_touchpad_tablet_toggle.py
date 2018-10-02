@@ -28,12 +28,14 @@ def monitor_acpi_events(touch_and_track):
     #onboard_pid = None
     while True:
         event = socketACPI.recv(4096)
-        log.debug("catching acpi event %s", event) 
-        
-        if event == b"video/tabletmode TBLT 0000008A 00000000\n":
+        log.debug("catching acpi event %s", event)
+
+        #if event == b"video/tabletmode TBLT 0000008A 00000000 K\n":
+        if b"video/tabletmode TBLT 0000008A 00000000" in event:
             for x in touch_and_track:
                 cmd_and_log(["xinput", "enable", x])
-        elif event == b"video/tabletmode TBLT 0000008A 00000001\n":
+        #elif event == b"video/tabletmode TBLT 0000008A 00000001 K\n":
+        elif b"video/tabletmode TBLT 0000008A 00000001" in event:
             for x in touch_and_track:
                 cmd_and_log(["xinput", "disable", x])
 
